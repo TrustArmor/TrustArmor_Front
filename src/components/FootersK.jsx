@@ -8,16 +8,16 @@ const Footers = () => {
             <div className="flex flex-col items-center space-y-4">
                 {/* Title */}
                 <div className="flex items-center text-white font-bold">
+
                 <img src={logo} alt="TrustArmor Logo" className="h-8 w-8 mr-2" />TrustArmor
                 </div>
-                
                 {/* Sections (now horizontal) */}
                 <div className="mb-4">
                     <ul className="flex justify-center space-x-4"> {/* flex + horizontal space */}
-                        <li><a href="#Introduction" >Introduction</a></li>
-                        <li><a href='#How_it_works'>How It Works</a></li>
-                        <li><a href='#The_journey'>The Journey</a></li>
-                        <li><a href='#Uploading'>Uploading</a></li>
+                        <li><a href="#Intangiriro">Intangiriro</a></li>
+                        <li><a href='#Uko_bikora'>Uko Bikora</a></li>
+                        <li><a href='#Urugendo'>Urugendo</a></li>
+                        <li><a href='#Gushyiraho'>Gushyiraho</a></li>
                     </ul>
                 </div>
                 
@@ -25,7 +25,6 @@ const Footers = () => {
                 <div className="mb-4">
                     <div className="flex justify-center space-x-4">
                 
-                       
                     <a href="https://x.com/GiseleAkuzwe1" aria-label="Twitter">
                     <FaTwitter className="text-2xl" />
                 </a>
@@ -40,7 +39,7 @@ const Footers = () => {
 
                 {/* Copyright */}
                 <div>
-                    <p>&copy; {new Date().getFullYear()} TrustArmor. All Rights Reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} TrustArmor. Uburenganzira Bwose Buragenwe.</p>
                 </div>
             </div>
         </footer>

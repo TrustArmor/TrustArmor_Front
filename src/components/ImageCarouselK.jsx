@@ -43,7 +43,7 @@ const ImageCarousel = () => {
   const prevIndex = (currentIndex - 1 + images.length) % images.length; // Previous image
 
   return (
-    <div id="The_journey" className="flex items-center justify-center space-x-4">
+    <div id="Urugendo" className="flex items-center justify-center space-x-4">
       {/* Previous image */}
       <img
         src={images[prevIndex]}

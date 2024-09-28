@@ -1,23 +1,19 @@
 import React from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import ImageCarousel from './components/ImageCarousel';
-import How from './components/How';
-import Footer from './components/Footers'; 
-import MainComponent from './components/MainComponent';
+import MainEnglish from './components/MainEnglish';
+import MainKinyarwanda from './components/MainKinyarwanda';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+
 
 function App() {
   return (
     
-    <div className="app">
-      <Navbar />
-      <Hero />
-      <How />
-      <ImageCarousel />
-      <MainComponent />
-      <Footer /> 
-    </div>
+    <Router>
+    <Routes>
+      <Route path="/" element={<MainEnglish />} />
+      <Route path="/MainKinyarwanda" element={<MainKinyarwanda />} />
+    </Routes>
+  </Router>
   );
 }
 

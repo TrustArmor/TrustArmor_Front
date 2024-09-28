@@ -13,7 +13,7 @@ const URLInput = ({ onSubmit }) => {
 
   return (
     <div className="p-4 rounded">
-      <h2 className="text-lg font-bold mb-2">Enter a URL</h2>
+      <h2 className="text-lg font-bold mb-2">Shyiramo inzira</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="url"
@@ -24,7 +24,7 @@ const URLInput = ({ onSubmit }) => {
           required
         />
         <button type="submit" className="mt-2 bg-purple-600 text-white rounded-lg px-4 py-2 w-full">
-          Submit
+          Tanga
         </button>
       </form>
     </div>
