@@ -12,6 +12,7 @@ const ImageCarousel = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false); // New state to track hovering
 
   // Navigate to the next image
   const nextSlide = () => {
@@ -27,13 +28,15 @@ const ImageCarousel = () => {
     );
   };
 
-  // Auto navigate images every 3 seconds
+  // Auto navigate images every 3 seconds, unless paused
   useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [currentIndex]);
+    if (!isPaused) {
+      const interval = setInterval(() => {
+        nextSlide();
+      }, 3000);
+      return () => clearInterval(interval);
+    }
+  }, [currentIndex, isPaused]);
 
   // Calculate the indices for the side images
   const nextIndex = (currentIndex + 1) % images.length; // Next image
@@ -45,33 +48,35 @@ const ImageCarousel = () => {
       <img
         src={images[prevIndex]}
         alt="Previous"
-        className="h-64 w-48 object-cover rounded-lg opacity-70" // Increased size
+        className="h-96 w-72 object-cover rounded-lg opacity-70 border-8 border-gray-500/50" // Increased image size (h-96, w-72)
       />
 
       {/* Chevron left */}
       <FaChevronLeft
         onClick={prevSlide}
-        className="cursor-pointer text-5xl text-black" // Increased size
+        className="cursor-pointer text-5xl text-black"
       />
 
       {/* Current (main) image */}
       <img
         src={images[currentIndex]}
         alt="Main"
-        className="h-72 w-56 object-cover rounded-lg" // Increased size
+        className="h-[450px] w-[350px] object-cover rounded-lg border-8 border-gray-500/50" // Larger main image size (h-450px, w-350px)
+        onMouseEnter={() => setIsPaused(true)} // Pause on hover
+        onMouseLeave={() => setIsPaused(false)} // Resume when hover ends
       />
 
       {/* Chevron right */}
       <FaChevronRight
         onClick={nextSlide}
-        className="cursor-pointer text-5xl text-black" // Increased size
+        className="cursor-pointer text-5xl text-black"
       />
 
       {/* Next image */}
       <img
         src={images[nextIndex]}
         alt="Next"
-        className="h-64 w-48 object-cover rounded-lg opacity-70" // Increased size
+        className="h-96 w-72 object-cover rounded-lg opacity-70 border-8 border-gray-500/50" // Increased image size (h-96, w-72)
       />
     </div>
   );

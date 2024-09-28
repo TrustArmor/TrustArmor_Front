@@ -15,15 +15,16 @@ const MainComponent = () => {
   };
 
   return (
-    <div className="flex justify-between p-10">
+    <div className="flex space-x-4 p-6">
       {/* Left Side - Photo Upload */}
-      <div className="w-1/2">
+      <div className="w-1/2 h-64">
         <PhotoUpload onUpload={handleImageUpload} />
         {uploadedImage && <img src={uploadedImage} alt="Uploaded" className="mt-4" />}
       </div>
+      
 
       {/* Right Side - URL Input */}
-      <div className="w-1/2">
+      <div className="w-1/2 h-64">
         <URLInput onSubmit={handleUrlSubmit} />
         {submittedUrl && <p className="mt-4">Submitted URL: {submittedUrl}</p>}
       </div>
