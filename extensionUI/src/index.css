@@ -8,9 +8,7 @@
 body {
   font-family: 'Poppins', sans-serif;
 }
-h1 {
-    font-family: 'Playwrite DE Grund', sans-serif; /* Applies the font to all h1 elements */
-  }
+
 .container {
     display: flex;               /* Use flexbox layout */
     justify-content: flex-start; /* Align items to the left */
