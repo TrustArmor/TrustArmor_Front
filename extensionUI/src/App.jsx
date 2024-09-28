@@ -5,10 +5,12 @@ import ImageCarousel from './components/ImageCarousel';
 import How from './components/How';
 import Footer from './components/Footers'; 
 import MainComponent from './components/MainComponent';
+import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    
+    <div className="app">
       <Navbar />
       <Hero />
       <How />
